@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, { useState} from 'react';
 import Pregunta from './components/pregunta';
 import Formulario from './components/formulario';
 import Listado from './components/Listado';
@@ -13,7 +13,7 @@ function App() {
   const agregarNuevoGasto = gasto => {
     guardarGastos ([
       ...gastos,
-      gastos
+      gasto
     ])
      
     
