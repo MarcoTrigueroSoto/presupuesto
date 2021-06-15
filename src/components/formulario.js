@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {nanoid} from 'nanoid';
 import Error from './error';
+import PropTypes from 'prop-types';
 
-const Formulario = ({agregarNuevoGasto}) => {
+const Formulario = ({guardarGasto, guardarcrearGasto}) => {
     const [nombre, guardarNombre] = useState('');
     const [cantidad, guardarCantidad] = useState(0);
     const [error, guardarError] = useState(false);
@@ -23,8 +24,8 @@ const Formulario = ({agregarNuevoGasto}) => {
 
      console.log(gasto);       
 
-     agregarNuevoGasto(gasto);
-
+     guardarGasto(gasto);
+     guardarcrearGasto(true);   
      guardarNombre('');
      guardarCantidad(0);
 
@@ -65,4 +66,10 @@ const Formulario = ({agregarNuevoGasto}) => {
     </form> );
 }
  
+
+Formulario.propTypes = {
+ guardarGasto: PropTypes.func.isRequired,
+ guardarcrearGasto: PropTypes.func.isRequired   
+}
+
 export default Formulario;
