@@ -8,7 +8,10 @@ const Listado = ({gastos}) => {
          
          <h2>Listado</h2> 
             {gastos.map( gasto => (
-                <p>{gasto.id} </p>
+                <Gasto 
+                key={gasto.id}    
+                gasto = {gasto}
+                />
                 
                
             ))}
